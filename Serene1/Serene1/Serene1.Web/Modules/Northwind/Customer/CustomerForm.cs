@@ -15,7 +15,7 @@ namespace Serene1.Northwind.Forms
         public String CompanyName { get; set; }
         [Category("Contact")]
         public String ContactName { get; set; }
-        public String ContactTitle { get; set; }
+     //   public String ContactTitle { get; set; }
         public List<Int32> Representatives { get; set; }
 
         [Category("Address")]
@@ -43,6 +43,6 @@ namespace Serene1.Northwind.Forms
         [HalfWidth]
         public String Email { get; set; }
         [HalfWidth]
-        public Boolean? SendBulletin { get; set; }
+        public String SendBulletin { get; set; }
     }
 }

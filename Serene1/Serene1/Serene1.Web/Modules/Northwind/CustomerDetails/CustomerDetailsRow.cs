@@ -36,7 +36,7 @@ namespace Serene1.Northwind.Entities
             set { Fields.LastContactedBy[this] = value; }
         }
 
-        [DisplayName("Email"), Size(100), QuickSearch]
+        [DisplayName("My Email"), Size(100), QuickSearch]
         public String Email
         {
             get { return Fields.Email[this]; }
@@ -44,7 +44,7 @@ namespace Serene1.Northwind.Entities
         }
 
         [DisplayName("Send Bulletin"), NotNull]
-        public Boolean? SendBulletin
+        public String SendBulletin
         {
             get { return Fields.SendBulletin[this]; }
             set { Fields.SendBulletin[this] = value; }
@@ -192,7 +192,7 @@ namespace Serene1.Northwind.Entities
             public DateTimeField LastContactDate;
             public Int32Field LastContactedBy;
             public StringField Email;
-            public BooleanField SendBulletin;
+            public StringField SendBulletin;
 
             public StringField LastContactedByLastName;
             public StringField LastContactedByFirstName;

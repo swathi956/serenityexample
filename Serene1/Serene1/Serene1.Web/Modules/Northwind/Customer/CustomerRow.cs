@@ -25,21 +25,21 @@ namespace Serene1.Northwind.Entities
             set { Fields.ID[this] = value; }
         }
 
-        [DisplayName("Customer Id"), Size(5), PrimaryKey, NotNull, QuickSearch, Updatable(false), LookupInclude]
+        [DisplayName("Customer Id"), Size(5), PrimaryKey, NotNull, QuickSearch, LookupInclude]
         public String CustomerID
         {
             get { return Fields.CustomerID[this]; }
             set { Fields.CustomerID[this] = value; }
         }
 
-        [DisplayName("Company Name"), Size(40), NotNull, QuickSearch, LookupInclude]
+        [DisplayName("Company Name"), Size(40), NotNull, QuickSearch, Updatable(false), LookupInclude]
         public String CompanyName
         {
             get { return Fields.CompanyName[this]; }
             set { Fields.CompanyName[this] = value; }
         }
 
-        [DisplayName("Contact Name"), Size(30), QuickSearch]
+        [DisplayName("Contact Name"), Size(30), QuickSearch, LookupEditor(typeof(CustomerRow))]
         public String ContactName
         {
             get { return Fields.ContactName[this]; }
@@ -124,7 +124,7 @@ namespace Serene1.Northwind.Entities
         }
 
         [Origin("cd"), DefaultValue(false)]
-        public Boolean? SendBulletin
+        public String SendBulletin
         {
             get { return Fields.SendBulletin[this]; }
             set { Fields.SendBulletin[this] = value; }
@@ -182,7 +182,7 @@ namespace Serene1.Northwind.Entities
             public DateTimeField LastContactDate;
             public Int32Field LastContactedBy;
             public StringField Email;
-            public BooleanField SendBulletin;
+            public StringField SendBulletin;
         }
     }
 }
