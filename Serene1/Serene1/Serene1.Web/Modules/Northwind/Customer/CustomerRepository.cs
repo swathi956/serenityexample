@@ -39,6 +39,7 @@ namespace Serene1.Northwind.Repositories
 
         public ListResponse<MyRow> List(IDbConnection connection, ListRequest request)
         {
+            request.Take = 10;
             return new MyListHandler().Process(connection, request);
         }
 
